@@ -52,8 +52,6 @@ import EmailUsers from '@//components/projects/EmailUsers';
 import EmaillProjectAdmins from '@//components/projects/EmailProjectAdmins';
 import MyBadges from '@//components/myProgress/badges/MyBadges';
 import SkillsCatalog from '@//components/skills/catalog/SkillsCatalog';
-import ExportedSkills from '@/components/skills/catalog/ExportedSkills';
-import SkillsImportedFromCatalog from '@/components/skills/catalog/SkillsImportedFromCatalog';
 
 const GlobalBadgePage = () => import(/* webpackChunkName: 'globalBadgePage' */'@/components/badges/global/GlobalBadgePage');
 const GlobalBadgeSkills = () => import(/* webpackChunkName: 'globalBadgeSkills' */'@//components/badges/global/GlobalBadgeSkills');
@@ -307,23 +305,6 @@ const router = new Router({
         path: '/administrator/projects/:projectId/skills-catalog',
         component: SkillsCatalog,
         meta: { requiresAuth: true, reportSkillId: 'VisitSkillsCatalog' },
-        children: [{
-            name: 'ExportedSkills',
-            path: 'exported-skills',
-            component: ExportedSkills,
-            meta: {
-              requiresAuth: true,
-              reportSkillId: 'VisitExportedSkills',
-            },
-          }, {
-            name: 'ImportedSkills',
-            path: 'imported-skills',
-            component: SkillsImportedFromCatalog,
-            meta: {
-              requiresAuth: true,
-              reportSkillId: 'VisitImportedSkills',
-            },
-          }],
       }, {
         name: 'ProjectAccess',
         path: 'access',
