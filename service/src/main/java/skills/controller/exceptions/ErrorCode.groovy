@@ -32,5 +32,6 @@ enum ErrorCode {
     InsufficientProjectPoints,
     InsufficientSubjectPoints,
     ReadOnlySkill,
-    SkillAlreadyInCatalog
+    SkillAlreadyInCatalog,
+    ExportToCatalogNotAllowed
 }
